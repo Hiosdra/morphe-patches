@@ -54,7 +54,7 @@ To develop and release your Patches using this template:
 - Apply patches only to applications you own or are authorized to test.
 - Use [semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages. `feat:`, `fix:`, and `chore:` are the supported everyday types.
 - Commits of `fix:` and `feat:` automatically generate pre-releases; `chore:` does not create a release.
-- When `dev` is ready, merge it into `main` without squashing and let `release.yml` create the stable release.
+- When `dev` is ready, merge it into `master` without squashing and let `release.yml` create the stable release.
 
 ## Development notes
 - See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md)
@@ -62,10 +62,10 @@ To develop and release your Patches using this template:
 - Do not manually edit any generated files such as: `patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`.
   These files will be automatically updated in the release action.
 - Do not force push any semantic release commits or you will break the release. To 'redo' the last release then:
-  - Git drop the last dev/main semantic release commit you want to redo.
+  - Git drop the last dev/master semantic release commit you want to redo.
   - Delete the release from the release area of this repo and delete the tag
   - Make any other changes you wish to do
-  - Force push dev/main branch
+  - Force push dev/master branch
   - A new replacement release will be created by `release.yml`
 
 

@@ -1,6 +1,6 @@
 {
   "branches": [
-    "main",
+    "master",
     {
       "name": "dev",
       "prerelease": true
@@ -77,7 +77,7 @@
     [
       "@cleyrop-org/semantic-release-backmerge",
       {
-        "backmergeBranches": [{"from": "main", "to": "dev"}],
+        "backmergeBranches": [{"from": "master", "to": "dev"}],
         "clearWorkspace": true
       }
     ]

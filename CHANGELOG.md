@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/Hiosdra/morphe-patches/compare/v1.2.0...v1.2.1) (2026-07-27)
+
+### 🐛 Bug Fixes
+
+* start F1 foreground service when leaving player ([b82f039](https://github.com/Hiosdra/morphe-patches/commit/b82f039ec99a3973ca1016c1e3cc3ec08c0a9586))
+
 ## [1.2.0](https://github.com/Hiosdra/morphe-patches/compare/v1.1.0...v1.2.0) (2026-07-27)
 
 ### ✨ New Features

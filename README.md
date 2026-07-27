@@ -29,53 +29,17 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+<details open>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<br>
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release.
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Compile-only example](#compile-only-example) | Provides a no-op patch for validating the project build. |  |
 
-     If you wish for the patches list to be collapsed, then remove the word 'EXPANDED' from the comment tag above.
+</details>
 
-     If you wish to manually keep this list updated then remove the PATCHES_START and PATCHES_END
-     comment blocks entirely. -->
-
-The patch list is generated automatically during the first release.
-
-&nbsp;
-
-## 🚀 Get started
-
-To set up development:
-
-1. Follow the [Morphe development setup](https://github.com/MorpheApp/morphe-documentation/blob/main/docs/morphe-development/README.md), including the GitHub package credentials described in the [patcher setup guide](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md#-prepare-the-environment).
-2. In `Hiosdra/morphe-patches`, enable **Allow GitHub Actions to create and approve pull requests** in Settings > Actions > General > Workflow permissions.
-3. Develop changes on `dev` and use semantic commit messages.
-
-🎉 You are now ready to start creating patches!
-
-## Usage
-
-To develop and release your Patches using this template:
-
-- For a local build, run `./gradlew buildAndroid`. The `.mpp` file is written to `patches/build/libs/patches-*.mpp`.
-- Apply patches only to applications you own or are authorized to test.
-- Use [semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages. `feat:`, `fix:`, and `chore:` are the supported everyday types.
-- Commits of `fix:` and `feat:` create releases (`dev` prereleases and `main` stable releases); `chore:` does not create a release.
-- When `dev` is ready, merge it into `main` without squashing and let `release.yml` create the stable release.
-
-## Development notes
-- See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md)
-  for patch types, fingerprints, and execution contexts.
-- Do not manually edit any generated files such as: `patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`.
-  These files will be automatically updated in the release action.
-- Do not force push any semantic release commits or you will break the release. To 'redo' the last release then:
-  - Git drop the last dev/main semantic release commit you want to redo.
-  - Delete the release from the release area of this repo and delete the tag
-  - Make any other changes you wish to do
-  - Force push dev/main branch
-  - A new replacement release will be created by `release.yml`
-
-
-<!-- The patches end tag is intentionally placed here so the first release will cleanup
-     this readme of all developer instructions above. -->
 <!-- PATCHES_END -->
 
 #### How to use these patches

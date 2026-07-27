@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/Hiosdra/morphe-patches/compare/v1.2.2...v1.3.0) (2026-07-27)
+
+### ✨ New Features
+
+* add playback controls to F1 notification ([e0256d9](https://github.com/Hiosdra/morphe-patches/commit/e0256d97a200884e9a9bbe61a1e46577dfbc6092))
+
 ## [1.2.2](https://github.com/Hiosdra/morphe-patches/compare/v1.2.1...v1.2.2) (2026-07-27)
 
 ### 🐛 Bug Fixes

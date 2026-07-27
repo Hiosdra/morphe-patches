@@ -29,7 +29,9 @@ foreground-service patch below for stronger process lifetime protection.
 Adds a small Android media-playback foreground service and starts it when the
 player resumes. The patch also adds the required foreground-service manifest
 permissions and an ongoing playback notification. It depends on the background
-playback patch and the extension bundled in the `.mpp` file.
+playback patch and the extension bundled in the `.mpp` file. The notification
+provides Play/pause, Stop player, and Show PiP actions; tapping the notification
+also restores the player/PiP activity.
 
 ## 🚀 Building
 

@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/Hiosdra/morphe-patches/compare/v1.2.1...v1.2.2) (2026-07-27)
+
+### 🐛 Bug Fixes
+
+* use valid Android PiP method signature ([837ac97](https://github.com/Hiosdra/morphe-patches/commit/837ac972539e0266f51aebe8fefcf82c9686e3ee))
+
 ## [1.2.1](https://github.com/Hiosdra/morphe-patches/compare/v1.2.0...v1.2.1) (2026-07-27)
 
 ### 🐛 Bug Fixes

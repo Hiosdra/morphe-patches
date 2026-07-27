@@ -82,8 +82,7 @@ val f1TvPictureInPicturePatch = bytecodePatch(
                             invoke-interface {v0}, $PLAYER_SWITCHER->isCasting()Z
                             move-result v1
                             if-nez v1, :return
-                            invoke-virtual {v2}, Landroid/app/Activity;->enterPictureInPictureMode()Z
-                            move-result v1
+                            invoke-virtual {v2}, Landroid/app/Activity;->enterPictureInPictureMode()V
                             :return
                             return-void
                         """.toInstructions(),

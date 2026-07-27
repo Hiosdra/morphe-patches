@@ -1,0 +1,29 @@
+extension {
+    name = "extensions/f1tv-background-playback.mpe"
+}
+
+android {
+    namespace = "io.github.hiosdra.patches.extension.backgroundplayback"
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 29
+        targetSdk = 35
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+}
+
+dependencies {
+    implementation("androidx.media3:media3-session:1.6.0")
+    implementation("androidx.media3:media3-exoplayer:1.6.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    implementation("com.google.guava:listenablefuture:1.0")
+    // Bitmovin player is provided by the host app at runtime
+    compileOnly("com.bitmovin.player:player:3.112.0")
+}

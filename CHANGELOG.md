@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/Hiosdra/morphe-patches/compare/v1.1.0...v1.2.0) (2026-07-27)
+
+### ✨ New Features
+
+* add F1 foreground playback service ([9017a1f](https://github.com/Hiosdra/morphe-patches/commit/9017a1f2b7dc439472421e6804e4c080cc711f7f))
+
 ## [1.1.0](https://github.com/Hiosdra/morphe-patches/compare/v1.0.1...v1.1.0) (2026-07-27)
 
 ### ✨ New Features

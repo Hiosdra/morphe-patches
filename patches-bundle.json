@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-07-27T18:56:43",
-  "description": "## [1.1.0](https://github.com/Hiosdra/morphe-patches/compare/v1.0.1...v1.1.0) (2026-07-27)\n\n### ✨ New Features\n\n* finish F1 TV playback patches ([5b078e3](https://github.com/Hiosdra/morphe-patches/commit/5b078e3bdeb4487a936c08442e5abaf696bb3b62))",
-  "download_url": "https://github.com/Hiosdra/morphe-patches/releases/download/v1.1.0/patches-1.1.0.mpp",
+  "created_at": "2026-07-27T19:52:14",
+  "description": "## [1.2.0](https://github.com/Hiosdra/morphe-patches/compare/v1.1.0...v1.2.0) (2026-07-27)\n\n### ✨ New Features\n\n* add F1 foreground playback service ([9017a1f](https://github.com/Hiosdra/morphe-patches/commit/9017a1f2b7dc439472421e6804e4c080cc711f7f))",
+  "download_url": "https://github.com/Hiosdra/morphe-patches/releases/download/v1.2.0/patches-1.2.0.mpp",
   "signature_download_url": "",
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

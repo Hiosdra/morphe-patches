@@ -10,10 +10,9 @@ modified APK files.
 
 Use these patches only with applications you own or are authorized to modify.
 
-The first release contains a disabled-by-default, no-op build check. Experimental
-F1 TV patch and extension sources are kept in the repository but excluded from
-published bundles until they are ported to the current Morphe DEX API and tested
-against a supported APK.
+The published bundle contains two disabled-by-default F1 TV patches. Both have
+been applied and rebuilt successfully against the supported APK version listed
+below. The no-op build check remains available for repository smoke testing.
 
 ## Add to Morphe
 
@@ -29,7 +28,7 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.1](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.0.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;1 patches total
+> **Unreleased changes**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
 <details open>
 <summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
@@ -37,6 +36,17 @@ https://github.com/Hiosdra/morphe-patches
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Compile-only example](#compile-only-example) | Provides a no-op patch for validating the project build. |  |
+
+</details>
+
+<details open>
+<summary>🏎️ F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| F1 TV - Background playback | Keeps the F1 TV player alive when the activity goes to the background or the screen turns off. |  |
+| F1 TV - Picture-in-Picture | Enables Android PiP for the F1 TV player and enters it when leaving the activity during playback. |  |
 
 </details>
 
@@ -51,6 +61,9 @@ Or manually add this repository URL as a patch source in Morphe: https://github.
 ### 🛠️ Building
 
 To build Hiosdra Patches, follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+
+The current F1 TV target is `com.formulaone.production` version
+`3.0.48.1-SP157.6.0-release-R52-mobile` (versionCode `30481000`).
 
 ## 📜 License
 

@@ -17,16 +17,6 @@ kotlin {
         freeCompilerArgs.add("-Xcontext-parameters")
     }
 
-    sourceSets {
-        main {
-            // Keep experimental patches in-tree without publishing them before
-            // they compile against the Morphe DEX API and pass APK tests.
-            kotlin.exclude(
-                "io/github/hiosdra/patches/F1TvBackgroundPlaybackPatch.kt",
-                "io/github/hiosdra/patches/F1TvPictureInPicturePatch.kt",
-            )
-        }
-    }
 }
 
 // Separate configuration so gson is available at runtime for the

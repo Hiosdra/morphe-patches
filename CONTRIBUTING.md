@@ -23,9 +23,9 @@
    - `chore:` for maintenance that should not create a release.
    - `bump:` when updating supported app versions.
 
-6. Open or update the pull request from `dev` to `master`.
+6. Open or update the pull request from `dev` to `main`.
 
-Merging `dev` into `master` without squashing creates a stable release. Commits
+Merging `dev` into `main` without squashing creates a stable release. Commits
 on `dev` can create prereleases. Do not manually edit `CHANGELOG.md`,
 `patches-bundle.json`, `patches-list.json`, or the generated patch list in
 `README.md`.

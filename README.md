@@ -10,6 +10,11 @@ modified APK files.
 
 Use these patches only with applications you own or are authorized to modify.
 
+The first release contains a disabled-by-default, no-op build check. Experimental
+F1 TV patch and extension sources are kept in the repository but excluded from
+published bundles until they are ported to the current Morphe DEX API and tested
+against a supported APK.
+
 ## Add to Morphe
 
 [Add Hiosdra Patches to Morphe](https://morphe.software/add-source?github=Hiosdra%2Fmorphe-patches)
@@ -53,8 +58,8 @@ To develop and release your Patches using this template:
 - For a local build, run `./gradlew buildAndroid`. The `.mpp` file is written to `patches/build/libs/patches-*.mpp`.
 - Apply patches only to applications you own or are authorized to test.
 - Use [semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages. `feat:`, `fix:`, and `chore:` are the supported everyday types.
-- Commits of `fix:` and `feat:` automatically generate pre-releases; `chore:` does not create a release.
-- When `dev` is ready, merge it into `master` without squashing and let `release.yml` create the stable release.
+- Commits of `fix:` and `feat:` create releases (`dev` prereleases and `main` stable releases); `chore:` does not create a release.
+- When `dev` is ready, merge it into `main` without squashing and let `release.yml` create the stable release.
 
 ## Development notes
 - See the [patcher documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/1_patcher_intro.md)
@@ -62,10 +67,10 @@ To develop and release your Patches using this template:
 - Do not manually edit any generated files such as: `patches-list.json`, `patches-bundle.json`, `CHANGELOG.md`.
   These files will be automatically updated in the release action.
 - Do not force push any semantic release commits or you will break the release. To 'redo' the last release then:
-  - Git drop the last dev/master semantic release commit you want to redo.
+  - Git drop the last dev/main semantic release commit you want to redo.
   - Delete the release from the release area of this repo and delete the tag
   - Make any other changes you wish to do
-  - Force push dev/master branch
+  - Force push dev/main branch
   - A new replacement release will be created by `release.yml`
 
 

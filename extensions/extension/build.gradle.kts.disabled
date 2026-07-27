@@ -1,3 +1,5 @@
+// Work in progress. Rename back to build.gradle.kts only after the extension
+// compiles against the current host-app and Media3 APIs and has APK tests.
 extension {
     name = "extensions/f1tv-background-playback.mpe"
 }

@@ -1,6 +1,7 @@
 rootProject.name = "hiosdra-patches"
 
-include(":extensions:extension")
+// The F1 TV extension is work in progress and is intentionally not included in
+// release builds until its host-app hooks are implemented and tested.
 
 pluginManagement {
     repositories {
@@ -20,16 +21,4 @@ pluginManagement {
 
 plugins {
     id("app.morphe.patches") version "1.3.3"
-}
-
-dependencyResolutionManagement {
-    repositories {
-        maven {
-            url = uri("https://artifacts.bitmovin.com/artifactory/public-releases/")
-            content {
-                includeGroup("com.bitmovin.analytics")
-                includeGroup("com.bitmovin.player")
-            }
-        }
-    }
 }

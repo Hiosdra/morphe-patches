@@ -3,8 +3,6 @@ morphe-patcher = "1.7.0"
 #noinspection GradleDependency
 smali = "d92701d947"
 gson = "2.14.0"
-bitmovin-player = "3.112.0"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
-bitmovin-player = { module = "com.bitmovin.player:player", version.ref = "bitmovin-player" }

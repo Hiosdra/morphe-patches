@@ -1,8 +1,3 @@
-import org.gradle.api.attributes.Attribute
-import org.gradle.api.attributes.Category
-import org.gradle.api.attributes.Usage
-import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
-
 group = "io.github.hiosdra.patches"
 
 patches {
@@ -21,36 +16,25 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.add("-Xcontext-parameters")
     }
+
+    sourceSets {
+        main {
+            // Keep experimental patches in-tree without publishing them before
+            // they compile against the Morphe DEX API and pass APK tests.
+            kotlin.exclude(
+                "io/github/hiosdra/patches/F1TvBackgroundPlaybackPatch.kt",
+                "io/github/hiosdra/patches/F1TvPictureInPicturePatch.kt",
+            )
+        }
+    }
 }
 
 // Separate configuration so gson is available at runtime for the
 // generatePatchesList task but never bundled into the APK.
 val patchListGeneratorClasspath = configurations.create("patchListGeneratorClasspath")
 
-// Morphe patches compile as JVM code, while Bitmovin publishes Android AAR
-// variants. Resolve the Android API graph and expose only its classes to the
-// compiler. The host application provides the SDK at runtime.
-val bitmovinPlayerClasspath = configurations.create("bitmovinPlayerClasspath") {
-    isCanBeConsumed = false
-    isCanBeResolved = true
-
-    attributes {
-        attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.LIBRARY))
-        attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage.JAVA_API))
-        attribute(KotlinPlatformType.attribute, KotlinPlatformType.androidJvm)
-    }
-}
-
-val bitmovinPlayerClasses = bitmovinPlayerClasspath.incoming.artifactView {
-    attributes {
-        attribute(Attribute.of("artifactType", String::class.java), "android-classes-jar")
-    }
-}.files
-
 dependencies {
     compileOnly(libs.gson)
-    bitmovinPlayerClasspath(libs.bitmovin.player)
-    compileOnly(bitmovinPlayerClasses)
     patchListGeneratorClasspath(libs.gson)
 }
 

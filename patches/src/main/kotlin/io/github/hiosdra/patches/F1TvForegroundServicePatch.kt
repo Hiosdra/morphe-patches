@@ -76,6 +76,30 @@ val f1TvForegroundServicePatch = bytecodePatch(
     extendWith("extensions/extension.mpe")
 
     execute {
+        val onPause = mutableClassDefBy(BASE_PLAYER_ACTIVITY).methods.firstOrNull {
+            it.name == "onPause" && it.parameterTypes.isEmpty()
+        } ?: error("F1 TV BasePlayerActivity.onPause() was not found")
+
+        // onResume can run before the player has reported PLAYING. Start the
+        // service again at the lifecycle boundary where the user leaves the
+        // player, so Home/PiP does not rely on a later resume callback.
+        onPause.addInstructions(
+            0,
+            """
+                invoke-virtual {p0}, $BASE_PLAYER_ACTIVITY->getPlayerSwitcher()$PLAYER_SWITCHER
+                move-result-object v0
+                invoke-interface {v0}, $PLAYER_SWITCHER->isPlaying()Z
+                move-result v1
+                if-eqz v1, :skip_service
+                new-instance v1, Landroid/content/Intent;
+                const-class v0, $FOREGROUND_SERVICE
+                invoke-direct {v1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+                invoke-virtual {p0, v1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
+                move-result-object v1
+                :skip_service
+            """,
+        )
+
         val onResume = mutableClassDefBy(BASE_PLAYER_ACTIVITY).methods.firstOrNull {
             it.name == "onResume" && it.parameterTypes.isEmpty()
         } ?: error("F1 TV BasePlayerActivity.onResume() was not found")

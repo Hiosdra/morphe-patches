@@ -57,6 +57,27 @@ current patch API cannot express a dependency on a patch object supplied by a
 different bundle, nor can it set options on that external patch. The requested
 automatic selection remains a Morphe Manager integration item.
 
+## 🐞 Debugging on a device
+
+If playback still stops or Android shows an app-stopping message, capture the
+system log while reproducing it:
+
+```bash
+adb logcat -c
+adb logcat -b all -v threadtime \
+  -s AndroidRuntime:V ActivityTaskManager:V ActivityManager:V \
+  > f1-tv-logcat.txt
+```
+
+Start playback, press Home once, then stop logging with `Ctrl-C`. Useful lines
+usually include `FATAL EXCEPTION`, `ForegroundServiceStartNotAllowed`,
+`SecurityException`, or `Unable to start service`. Also capture:
+
+```bash
+adb shell dumpsys activity services com.formulaone.production
+adb shell dumpsys package com.formulaone.production | grep -i -E 'picture|foreground|notification'
+```
+
 ## 🎯 Target App Details
 
 - **Package:** `com.formulaone.production`

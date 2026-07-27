@@ -13,14 +13,28 @@ import java.net.URLClassLoader
 import java.util.jar.Manifest
 
 fun main() {
-    val patchFiles = setOf(
-        File("build/libs/").listFiles { file ->
-            val fileName = file.name
-            !fileName.contains("javadoc") &&
-                    !fileName.contains("sources") &&
-                    fileName.endsWith(".mpp")
-        }!!.first()
-    )
+    val patchFilesDirectory = File("build/libs/")
+    val candidatePatchFiles = patchFilesDirectory.listFiles { file ->
+        val fileName = file.name
+        !fileName.contains("javadoc") &&
+                !fileName.contains("sources") &&
+                fileName.endsWith(".mpp")
+    }?.toList().orEmpty()
+    require(candidatePatchFiles.isNotEmpty()) { "No patch bundle found in $patchFilesDirectory" }
+
+    // Local builds can leave bundles from earlier releases in build/libs. Always
+    // generate metadata from the highest semantic version instead of whichever
+    // file happens to be returned first by the filesystem.
+    val selectedPatchFile = candidatePatchFiles.maxWithOrNull(
+        compareBy<File> { file ->
+            Regex("patches-(\\d+)\\.(\\d+)\\.(\\d+)\\.mpp")
+                .matchEntire(file.name)
+                ?.groupValues
+                ?.let { it[1].toLong() * 1_000_000_000L + it[2].toLong() * 1_000_000L + it[3].toLong() }
+                ?: -1L
+        }.thenBy { it.name },
+    ) ?: error("Unable to select a patch bundle from $candidatePatchFiles")
+    val patchFiles = setOf(selectedPatchFile)
     val loadedPatches = loadPatchesFromJar(patchFiles)
     val patchClassLoader = URLClassLoader(patchFiles.map { it.toURI().toURL() }.toTypedArray())
     val manifest = patchClassLoader.getResources("META-INF/MANIFEST.MF")

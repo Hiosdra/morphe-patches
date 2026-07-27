@@ -13,8 +13,37 @@
     {
       "name": "F1 TV - Background playback",
       "description": "Keeps the F1 TV player alive when the activity goes to the background or the screen turns off.",
-      "default": false,
+      "default": true,
       "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.formulaone.production",
+          "name": "F1 TV",
+          "description": "F1 TV mobile APK",
+          "apkFileType": "APK",
+          "appIconColor": "#E10600",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "3.0.48.1-SP157.6.0-release-R52-mobile",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": 29,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "F1 TV - Foreground playback service",
+      "description": "Keeps background F1 TV playback alive with an Android media playback notification.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
       "compatiblePackages": [
         {
           "packageName": "com.formulaone.production",
@@ -39,7 +68,7 @@
     {
       "name": "F1 TV - Picture-in-Picture",
       "description": "Keeps F1 TV playback alive while entering Android Picture-in-Picture mode.",
-      "default": false,
+      "default": true,
       "dependencies": [
         "ResourcePatch"
       ],

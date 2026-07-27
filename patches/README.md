@@ -19,9 +19,17 @@ attributes. The manifest edit is included automatically as a dependency.
 
 Keeps playback attached when the activity stops by removing the player-view
 `onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case `detach()` calls.
-This allows audio to continue while the app remains alive. It does not add a
-foreground service or media notification, so Android may still reclaim the app
-process under memory pressure.
+This allows audio to continue while the app remains alive. Pair it with the
+foreground-service patch below for stronger process lifetime protection.
+
+### 3. F1 TV - Foreground playback service
+**File:** `F1TvForegroundServicePatch.kt`
+**Target:** `BasePlayerActivity`
+
+Adds a small Android media-playback foreground service and starts it when the
+player resumes. The patch also adds the required foreground-service manifest
+permissions and an ongoing playback notification. It depends on the background
+playback patch and the extension bundled in the `.mpp` file.
 
 ## 🚀 Building
 
@@ -41,6 +49,13 @@ Outputs:
    - Or use the one-click link: `https://morphe.software/add-source?github=Hiosdra%2Fmorphe-patches`
 
 2. Enable desired patches in Morphe's patch list
+
+The two universal Morphe patches `Disable Play Store updates` and `Change
+package name` are separate patches from the official Morphe bundle. Select
+them manually alongside the F1 TV patches when you want those behaviors; the
+current patch API cannot express a dependency on a patch object supplied by a
+different bundle, nor can it set options on that external patch. The requested
+automatic selection remains a Morphe Manager integration item.
 
 ## 🎯 Target App Details
 
@@ -97,8 +112,8 @@ class descriptors and compatibility target when F1 TV updates.
 
 ## 🐛 Known Limitations
 
-1. **Process lifetime** - Background playback has no foreground service; Android can
-   stop the app process when it is under memory pressure.
+1. **Notification permission** - On Android 13 and newer, allow notifications for
+   the F1 TV app so the foreground playback notification can be shown.
 
 2. **Multiview** - TiledPlayerActivity is not targeted.
 

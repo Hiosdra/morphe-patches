@@ -21,7 +21,7 @@ private fun f1TvMethodFingerprint(
 val f1TvBackgroundPlaybackPatch = bytecodePatch(
     name = "F1 TV - Background playback",
     description = "Keeps the F1 TV player alive when the activity goes to the background or the screen turns off.",
-    default = false,
+    default = true,
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
 

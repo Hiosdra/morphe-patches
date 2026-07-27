@@ -1,7 +1,7 @@
 rootProject.name = "hiosdra-patches"
 
-// The F1 TV extension is work in progress and is intentionally not included in
-// release builds until its host-app hooks are implemented and tested.
+// The F1 TV extension is synced into the patch bundle and installed by the
+// foreground-service patch when that patch is selected.
 
 pluginManagement {
     repositories {

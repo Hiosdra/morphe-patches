@@ -48,7 +48,7 @@ private fun f1TvOnPauseFingerprint() = Fingerprint(
 val f1TvPictureInPicturePatch = bytecodePatch(
     name = "F1 TV - Picture-in-Picture",
     description = "Keeps F1 TV playback alive while entering Android Picture-in-Picture mode.",
-    default = false,
+    default = true,
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
     dependsOn(f1TvPictureInPictureResourcePatch)

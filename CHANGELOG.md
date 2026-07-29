@@ -1,3 +1,9 @@
+## [1.4.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-07-29)
+
+### ✨ New Features
+
+* add Movie Paradise patches (PairIP bypass + experimental RevenueCat premium) ([d08a74c](https://github.com/Hiosdra/morphe-patches/commit/d08a74c8371b707b4b8b9c8374da74d0e2a9fb38))
+
 ## [1.3.0](https://github.com/Hiosdra/morphe-patches/compare/v1.2.2...v1.3.0) (2026-07-27)
 
 ### ✨ New Features

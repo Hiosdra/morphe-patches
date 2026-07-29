@@ -28,7 +28,7 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.3.0](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.3.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
+> **[v1.4.0-dev.1](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.4.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
 <details open>
 <summary>📦 F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
@@ -43,6 +43,22 @@ https://github.com/Hiosdra/morphe-patches
 | [F1 TV - Background playback](#f1-tv-background-playback) | Keeps the F1 TV player alive when the activity goes to the background or the screen turns off. |  |
 | [F1 TV - Foreground playback service](#f1-tv-foreground-playback-service) | Keeps background F1 TV playback alive with an Android media playback notification and playback/PiP controls. |  |
 | [F1 TV - Picture-in-Picture](#f1-tv-picture-in-picture) | Keeps F1 TV playback alive while entering Android Picture-in-Picture mode. |  |
+
+</details>
+
+<details open>
+<summary>📦 Movie Paradise&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 5.2.0 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Movie Paradise - Force RevenueCat entitlement (experimental)](#movie-paradise-force-revenuecat-entitlement-experimental) | Forces RevenueCat entitlements active. Experimental: premium is server-authoritative, so this likely unlocks nothing. |  |
+| [Movie Paradise - PairIP license bypass](#movie-paradise-pairip-license-bypass) | Neutralises Google Play integrity/license checks (PairIP) so a repackaged build launches. |  |
 
 </details>
 

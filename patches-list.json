@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.3.0",
+  "version": "1.4.0-dev.2",
   "patches": [
     {
       "name": "Compile-only example",
@@ -86,6 +86,87 @@
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": 29,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Movie Paradise - Force RevenueCat entitlement (experimental)",
+      "description": "Forces RevenueCat entitlements active. Experimental: premium is server-authoritative, so this likely unlocks nothing.",
+      "default": false,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.techkitlabs.movieparadise",
+          "name": "Movie Paradise",
+          "description": "Movie Paradise (Flutter) — distributed as split APK (XAPK)",
+          "apkFileType": "XAPK",
+          "appIconColor": "#111827",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "5.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": 24,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Movie Paradise - GmsCore support (microG login)",
+      "description": "Routes Google Play Services through microG (MicroG-RE) so Google sign-in works without stock Play Services.",
+      "default": false,
+      "dependencies": [
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.techkitlabs.movieparadise",
+          "name": "Movie Paradise",
+          "description": "Movie Paradise (Flutter) — distributed as split APK (XAPK)",
+          "apkFileType": "XAPK",
+          "appIconColor": "#111827",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "5.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": 24,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Movie Paradise - PairIP license bypass",
+      "description": "Neutralises Google Play integrity/license checks (PairIP) so a repackaged build launches.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.techkitlabs.movieparadise",
+          "name": "Movie Paradise",
+          "description": "Movie Paradise (Flutter) — distributed as split APK (XAPK)",
+          "apkFileType": "XAPK",
+          "appIconColor": "#111827",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "5.2.0",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": 24,
               "description": null
             }
           ]

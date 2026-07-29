@@ -19,6 +19,22 @@ internal const val PAIRIP_LICENSE_CLIENT = "Lcom/pairip/licensecheck/LicenseClie
 // guaranteed unlock — see MovieParadisePremiumPatch.
 internal const val RC_ENTITLEMENT_INFO = "Lcom/revenuecat/purchases/EntitlementInfo;"
 
+internal const val MOVIE_PARADISE_MAIN_ACTIVITY = "Lcom/techkitlabs/movieparadise/MainActivity;"
+
+// GmsCore (MicroG-RE, Morphe variant) support. Redirects the app's Google Play
+// Services references to the microG package so Google sign-in / GMS works without
+// stock Play Services. Vendor id kept as "app.revanced" for MicroG-RE compatibility.
+internal const val GMS_CORE_VENDOR = "app.revanced"
+internal const val MICROG_PACKAGE = "app.revanced.android.gms"
+internal const val GMS_EXTENSION_CLASS =
+    "Lio/github/hiosdra/patches/extension/gms/GmsCoreSupport;"
+
+// Original developer signing certificate SHA-1 of the Play-distributed APK
+// (verified: base.apk carries a valid Google Play source stamp; DN "CN=Android,
+// O=Google Inc." is the standard Play App Signing key DN). microG spoofs this to
+// Google so sign-in still validates after Morphe repackages/resigns the APK.
+internal const val MOVIE_PARADISE_ORIGINAL_SIGNATURE = "d274a756435991a765f58b4b94d9310dc0478b30"
+
 internal const val MOVIE_PARADISE_VERSION = "5.2.0"
 internal const val MOVIE_PARADISE_VERSION_CODE = 38
 

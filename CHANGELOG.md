@@ -1,3 +1,9 @@
+## [1.4.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.1...v1.4.0-dev.2) (2026-07-29)
+
+### ✨ New Features
+
+* add Movie Paradise GmsCore (microG) support for Google login ([7bf44b4](https://github.com/Hiosdra/morphe-patches/commit/7bf44b4dea6361e20eca6a00ac826acb95cfc0d9))
+
 ## [1.4.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-07-29)
 
 ### ✨ New Features

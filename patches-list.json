@@ -3,14 +3,6 @@
   "version": "1.3.0",
   "patches": [
     {
-      "name": "Compile-only example",
-      "description": "Provides a no-op patch for validating the project build.",
-      "default": false,
-      "dependencies": [],
-      "compatiblePackages": null,
-      "options": []
-    },
-    {
       "name": "F1 TV - Background playback",
       "description": "Keeps the F1 TV player alive when the activity goes to the background or the screen turns off.",
       "default": true,

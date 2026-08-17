@@ -1,6 +1,7 @@
-# F1 TV Morphe Patches
+# Hiosdra Morphe Patches
 
-This repository contains Morphe patches for the F1 TV Android app (`com.formulaone.production`).
+This repository contains Morphe patches for the F1 TV Android app
+(`com.formulaone.production`) and VesselFinder (`com.astrapaging.vff`).
 
 ## 📋 Available Patches
 
@@ -32,6 +33,14 @@ permissions and an ongoing playback notification. It depends on the background
 playback patch and the extension bundled in the `.mpp` file. The notification
 provides Play/pause, Stop player, and Show PiP actions; tapping the notification
 also restores the player/PiP activity.
+
+### 4. VesselFinder - Disable advertisements
+**File:** `VesselFinderDisableAdvertisementsPatch.kt`
+**Target:** `com.izosa.advert.AdvertPlugin` in VesselFinder 6.6.0
+
+Prevents the native Capacitor advertisement plugin from creating or showing
+AdMob banner advertisements, including consent and Mobile Ads initialization.
+This patch is disabled by default.
 
 ## 🚀 Building
 

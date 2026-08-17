@@ -10,9 +10,10 @@ modified APK files.
 
 Use these patches only with applications you own or are authorized to modify.
 
-The published bundle contains three F1 TV patches enabled by default. They have
-been applied and rebuilt successfully against the supported APK version listed
-below. The no-op build check remains available for repository smoke testing.
+The published bundle contains three F1 TV patches enabled by default and an
+optional VesselFinder patch that suppresses banner advertisements. The F1 TV
+patches have been applied and rebuilt successfully against the supported APK
+version listed below.
 
 ## Add to Morphe
 
@@ -64,12 +65,17 @@ https://github.com/Hiosdra/morphe-patches
 </details>
 
 <details open>
-<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
+<summary>📦 VesselFinder&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
+
+**🎯 Supported versions:**
+
+| 6.6.0 |
+| :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Compile-only example](#compile-only-example) | Provides a no-op patch for validating the project build. |  |
+| [VesselFinder - Disable advertisements](#vesselfinder-disable-advertisements) | Prevents the VesselFinder advertisement plugin from creating or showing banner ads. |  |
 
 </details>
 

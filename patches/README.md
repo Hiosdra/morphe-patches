@@ -1,4 +1,4 @@
-# Hiosdra Morphe Patches
+# Hiosdra Patches
 
 This repository contains Morphe patches for the F1 TV Android app
 (`com.formulaone.production`) and VesselFinder (`com.astrapaging.vff`).
@@ -34,7 +34,27 @@ playback patch and the extension bundled in the `.mpp` file. The notification
 provides Play/pause, Stop player, and Show PiP actions; tapping the notification
 also restores the player/PiP activity.
 
-### 4. VesselFinder - Disable advertisements
+### 4. F1 TV - Disable Play Store updates
+**File:** `F1TvDisablePlayStoreUpdatesPatch.kt`
+**Target:** F1 TV version-code reads
+
+Sets the manifest version code to `Int.MAX_VALUE` so Play Store does not offer
+an update, while replacing F1 TV's version-code reads with a bundled helper
+that restores the original value to the app itself. This is an F1 TV-specific,
+standalone adaptation of Morphe's GPLv3 patch and keeps the required source
+and license attribution in the source file.
+
+### 5. F1 TV - Change package name
+**File:** `F1TvChangePackageNamePatch.kt`
+**Target:** F1 TV `AndroidManifest.xml`
+
+Changes the package name to install a separate F1 TV instance. It is an
+F1 TV-specific, standalone adaptation of Morphe's GPLv3 Clone app patch and
+supports the same `packageName`, `updatePermissions`, and `updateProviders`
+options. The required Morphe and ReVanced attribution is retained in the
+source file.
+
+### 6. VesselFinder - Disable advertisements
 **File:** `VesselFinderDisableAdvertisementsPatch.kt`
 **Target:** `com.izosa.advert.AdvertPlugin` in VesselFinder 6.6.0
 
@@ -61,12 +81,12 @@ Outputs:
 
 2. Enable desired patches in Morphe's patch list
 
-The two universal Morphe patches `Disable Play Store updates` and `Change
-package name` are separate patches from the official Morphe bundle. Select
-them manually alongside the F1 TV patches when you want those behaviors; the
-current patch API cannot express a dependency on a patch object supplied by a
-different bundle, nor can it set options on that external patch. The requested
-automatic selection remains a Morphe Manager integration item.
+The F1 TV bundle includes standalone F1 TV copies of Morphe's `Disable Play
+Store updates` and `Clone app`/`Change package name` patches. Select `F1 TV -
+Disable Play Store updates` or `F1 TV - Change package name` directly from
+this source; they do not require selecting the corresponding universal patch
+from the official Morphe bundle. Their source files retain the required
+Morphe/ReVanced attribution and GPLv3 notices.
 
 ## 🐞 Debugging on a device
 

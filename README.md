@@ -10,10 +10,11 @@ modified APK files.
 
 Use these patches only with applications you own or are authorized to modify.
 
-The published bundle contains three F1 TV patches enabled by default and an
-optional VesselFinder patch that suppresses banner advertisements. The F1 TV
-patches have been applied and rebuilt successfully against the supported APK
-version listed below.
+The published bundle contains five F1 TV patches: three enabled by default and
+two optional standalone patches adapted from Morphe's universal patches. It
+also contains Movie Paradise patches and an optional VesselFinder patch that
+suppresses banner advertisements. The F1 TV patches have been applied and
+rebuilt successfully against the supported APK version listed below.
 
 ## Add to Morphe
 
@@ -29,9 +30,9 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.4.0-dev.3](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.4.0-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;7 patches total
+> **[v1.4.0-dev.3](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.4.0-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;9 patches total
 <details open>
-<summary>📦 F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<summary>📦 F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -42,6 +43,8 @@ https://github.com/Hiosdra/morphe-patches
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [F1 TV - Background playback](#f1-tv-background-playback) | Keeps the F1 TV player alive when the activity goes to the background or the screen turns off. |  |
+| [F1 TV - Change package name](#f1-tv-change-package-name) | Changes the F1 TV package name to allow installing a separate patched instance. By default ".morphe" is appended to the package name. | • Package name<br>• Update permissions<br>• Update providers |
+| [F1 TV - Disable Play Store updates](#f1-tv-disable-play-store-updates) | Disables Play Store updates for the F1 TV package by setting its version code to the maximum allowed. |  |
 | [F1 TV - Foreground playback service](#f1-tv-foreground-playback-service) | Keeps background F1 TV playback alive with an Android media playback notification and playback/PiP controls. |  |
 | [F1 TV - Picture-in-Picture](#f1-tv-picture-in-picture) | Keeps F1 TV playback alive while entering Android Picture-in-Picture mode. |  |
 

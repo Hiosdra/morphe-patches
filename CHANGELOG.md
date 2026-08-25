@@ -1,3 +1,9 @@
+## [1.4.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2026-08-17)
+
+### 🐛 Bug Fixes
+
+* add VesselFinder advertisement suppression patch ([0c67061](https://github.com/Hiosdra/morphe-patches/commit/0c67061081f5c18bd5ff69d407f5e5885c0bff4e))
+
 ## [1.4.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.1...v1.4.0-dev.2) (2026-07-29)
 
 ### ✨ New Features

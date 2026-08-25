@@ -48,7 +48,7 @@ val f1TvChangePackageNamePatch = resourcePatch(
     name = "F1 TV - Change package name",
     description = "Changes the F1 TV package name to allow installing a separate patched instance. " +
         "By default \".morphe\" is appended to the package name.",
-    default = false,
+    default = true,
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
 

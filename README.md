@@ -10,11 +10,10 @@ modified APK files.
 
 Use these patches only with applications you own or are authorized to modify.
 
-The published bundle contains five F1 TV patches: four enabled by default and
-one optional standalone patch adapted from Morphe's universal patches. The
-standalone `Change package name` patch is enabled by default. They have been
-applied and rebuilt successfully against the supported APK version listed
-below.
+The published bundle contains five F1 TV patches, all enabled by default.
+The standalone patches adapted from Morphe's universal patches are included
+directly in this F1 TV bundle. They have been applied and rebuilt successfully
+against the supported APK version listed below.
 
 ## Add to Morphe
 

@@ -78,7 +78,7 @@ private val f1TvDisablePlayStoreUpdatesResourcePatch = resourcePatch {
 internal val f1TvDisablePlayStoreUpdatesPatch = bytecodePatch(
     name = "F1 TV - Disable Play Store updates",
     description = "Disables Play Store updates for the F1 TV package by setting its version code to the maximum allowed.",
-    default = false,
+    default = true,
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
     dependsOn(f1TvDisablePlayStoreUpdatesResourcePatch)

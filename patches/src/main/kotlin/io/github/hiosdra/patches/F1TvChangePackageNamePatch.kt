@@ -48,7 +48,7 @@ val f1TvChangePackageNamePatch = resourcePatch(
     name = "F1 TV - Change package name",
     description = "Changes the F1 TV package name to allow installing a separate patched instance. " +
         "By default \".morphe\" is appended to the package name.",
-    default = false,
+    default = true,
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
 
@@ -65,7 +65,7 @@ val f1TvChangePackageNamePatch = resourcePatch(
 
     val updatePermissionsOption = booleanOption(
         key = "updatePermissions",
-        default = false,
+        default = true,
         title = "Update permissions",
         description = "Update custom permissions declared by F1 TV. " +
             "This can fix installation conflicts, but may break app features.",
@@ -73,7 +73,7 @@ val f1TvChangePackageNamePatch = resourcePatch(
 
     val updateProvidersOption = booleanOption(
         key = "updateProviders",
-        default = false,
+        default = true,
         title = "Update providers",
         description = "Update provider names declared by F1 TV. " +
             "This can fix installation conflicts, but may break app features.",

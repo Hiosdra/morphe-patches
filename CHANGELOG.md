@@ -1,3 +1,9 @@
+## [1.4.0-dev.5](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** target version 3.0.49.4 on dev ([88f3129](https://github.com/Hiosdra/morphe-patches/commit/88f3129f1e9d9a310ca6699ab8aa69281c86c44d))
+
 ## [1.4.0-dev.4](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2026-08-25)
 
 ### 🐛 Bug Fixes

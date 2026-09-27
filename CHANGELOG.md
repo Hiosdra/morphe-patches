@@ -1,3 +1,9 @@
+## [1.5.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** enable Tiledmedia background audio ([343a5b1](https://github.com/Hiosdra/morphe-patches/commit/343a5b14bcb7255be17d7c23262bee41d167c430))
+
 ## [1.5.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0...v1.5.0-dev.1) (2026-09-27)
 
 ### 🐛 Bug Fixes

@@ -32,7 +32,7 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.5.0-dev.1](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.5.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;9 patches total
+> **[v1.5.0-dev.2](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.5.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;9 patches total
 <details open>
 <summary>📦 F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
@@ -44,7 +44,7 @@ https://github.com/Hiosdra/morphe-patches
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [F1 TV - Background playback](#f1-tv-background-playback) | Keeps the F1 TV player alive when the activity goes to the background or the screen turns off. |  |
+| [F1 TV - Background playback](#f1-tv-background-playback) | Keeps Bitmovin playback alive and enables Tiledmedia background audio for F1 TV multiview. |  |
 | [F1 TV - Change package name](#f1-tv-change-package-name) | Changes the F1 TV package name to allow installing a separate patched instance. By default ".morphe" is appended to the package name. | • Package name<br>• Update permissions<br>• Update providers |
 | [F1 TV - Disable Play Store updates](#f1-tv-disable-play-store-updates) | Disables Play Store updates for the F1 TV package by setting its version code to the maximum allowed. |  |
 | [F1 TV - Foreground playback service](#f1-tv-foreground-playback-service) | Keeps background F1 TV playback alive with an Android media playback notification and playback/PiP controls. |  |

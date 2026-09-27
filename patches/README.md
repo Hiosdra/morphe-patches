@@ -17,12 +17,14 @@ attributes. The manifest edit is included automatically as a dependency.
 
 ### 2. F1 TV - Background playback
 **File:** `F1TvBackgroundPlaybackPatch.kt`  
-**Target:** `BasePlayerActivity`
+**Target:** `BasePlayerActivity` (Bitmovin) and `TiledPlayerFactoryMobile` (Tiledmedia)
 
-Keeps playback attached when the activity stops by removing the player-view
-`onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case `detach()` calls.
-This allows audio to continue while the app remains alive. Pair it with the
-foreground-service patch below for stronger process lifetime protection.
+Keeps Bitmovin playback attached when the activity stops by removing the
+player-view `onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case
+`detach()` calls. For multiview, it enables ClearVR's built-in background-audio
+session, which starts the SDK's `MediaPlaybackService` and `MediaSession` even
+when F1 TV's PiP setting is off. Pair it with the foreground-service patch
+below for stronger process lifetime protection on the Bitmovin path.
 
 ### 3. F1 TV - Foreground playback service
 **File:** `F1TvForegroundServicePatch.kt`
@@ -159,7 +161,10 @@ The F1 TV app uses two separate player implementations:
 1. **Bitmovin Player** (`BasePlayerActivity`) - Standard live/VOD playback with dual PlayerView for seamless channel switching
 2. **Tiledmedia/ClearVR** (`TiledPlayerActivity`) - Multiview (multiple onboard cameras)
 
-These patches target only the Bitmovin player path (`BasePlayerActivity`).
+The PiP and foreground-service patches target the Bitmovin path
+(`BasePlayerActivity`). The background playback patch also updates
+`TiledPlayerFactoryMobile` so ClearVR's own media session can continue multiview
+audio in the background.
 
 ### Key Classes Patched
 
@@ -168,6 +173,7 @@ These patches target only the Bitmovin player path (`BasePlayerActivity`).
 | BasePlayerActivity | com.avs.f1.ui.player | Main player Activity |
 | PlayerSwitcherImpl | com.avs.f1.interactors.playback | Manages dual PlayerView, DRM, channel switching |
 | PlaybackUseCase | com.avs.f1.interactors.playback | Activity/player attachment lifecycle |
+| TiledPlayerFactoryMobile | com.avs.f1.ui.tiledmediaplayer | Enables ClearVR background audio and its built-in media session |
 
 ### Bytecode Patching Strategy
 
@@ -179,7 +185,7 @@ the decoded `AndroidManifest.xml` with the standard resource-patch API.
 
 | F1 TV Version | Patch Version | Status |
 |---------------|---------------|--------|
-| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current dev | ✅ Sources compile; dev APK application not verified |
+| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current dev | ✅ Morphe applied the background patch to the APK DEX; device playback not verified |
 | Other F1 TV versions | — | ⚠️ Fingerprints may need updates |
 
 Patches use fingerprints to target the exact player lifecycle calls. Update the
@@ -190,7 +196,9 @@ class descriptors and compatibility target when F1 TV updates.
 1. **Notification permission** - On Android 13 and newer, allow notifications for
    the F1 TV app so the foreground playback notification can be shown.
 
-2. **Multiview** - TiledPlayerActivity is not targeted.
+2. **Multiview** - This patch enables background audio through ClearVR's media
+   session. PiP behavior remains controlled by F1 TV's existing Tiledmedia
+   support.
 
 3. **Version pinning** - Update the compatibility target and fingerprints when
    F1 TV changes its player lifecycle or class names.

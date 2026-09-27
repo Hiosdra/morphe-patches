@@ -67,9 +67,12 @@ val f1TvPictureInPicturePatch = bytecodePatch(
 
     execute {
         val onPause = f1TvOnPauseFingerprint()
-        onPause.matchOrNull()?.let { match ->
-            match.method.removeInstruction(match.instructionMatches.first().index)
+        val pauseMatch = onPause.matchOrNull()
+            ?: error("F1 TV BasePlayerActivity.onPause() -> PlayerSwitcher.onPause() was not found")
+        check(pauseMatch.instructionMatches.size == 1) {
+            "Expected one PlayerSwitcher.onPause() call, found ${pauseMatch.instructionMatches.size}"
         }
+        pauseMatch.method.removeInstruction(pauseMatch.instructionMatches.single().index)
 
         val playerClass = mutableClassDefBy(BASE_PLAYER_ACTIVITY)
         if (playerClass.methods.none { it.name == "onUserLeaveHint" && it.parameterTypes.isEmpty() }) {

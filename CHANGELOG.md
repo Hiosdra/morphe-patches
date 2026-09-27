@@ -1,3 +1,18 @@
+## [1.5.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0...v1.5.0-dev.1) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* add VesselFinder advertisement suppression patch ([0c67061](https://github.com/Hiosdra/morphe-patches/commit/0c67061081f5c18bd5ff69d407f5e5885c0bff4e))
+* **f1:** preserve playback position when entering pip ([7a56aad](https://github.com/Hiosdra/morphe-patches/commit/7a56aadc786c2432fa4b09de3536617872d5e6f6))
+* **f1:** target version 3.0.49.4 on dev ([88f3129](https://github.com/Hiosdra/morphe-patches/commit/88f3129f1e9d9a310ca6699ab8aa69281c86c44d))
+
+### ✨ New Features
+
+* add Movie Paradise GmsCore (microG) support for Google login ([7bf44b4](https://github.com/Hiosdra/morphe-patches/commit/7bf44b4dea6361e20eca6a00ac826acb95cfc0d9))
+* add Movie Paradise patches (PairIP bypass + experimental RevenueCat premium) ([d08a74c](https://github.com/Hiosdra/morphe-patches/commit/d08a74c8371b707b4b8b9c8374da74d0e2a9fb38))
+* **f1:** add standalone package and update patches ([8341c21](https://github.com/Hiosdra/morphe-patches/commit/8341c21ff66abd1e6cff12a3715b61c12d89426d))
+* **release:** advance dev prerelease for Morphe discovery ([b58a370](https://github.com/Hiosdra/morphe-patches/commit/b58a37016a80345b884b54eac3cb62e33e91d77b))
+
 ## [1.4.0-dev.6](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.5...v1.4.0-dev.6) (2026-09-27)
 
 ### ✨ New Features

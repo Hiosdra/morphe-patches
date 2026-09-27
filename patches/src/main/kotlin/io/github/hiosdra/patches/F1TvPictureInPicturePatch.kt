@@ -1,9 +1,5 @@
 package io.github.hiosdra.patches
 
-import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
-import app.morphe.patcher.extensions.InstructionExtensions.removeInstruction
-import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
@@ -48,14 +44,6 @@ private val f1TvPictureInPictureResourcePatch = resourcePatch(
     }
 }
 
-private fun f1TvOnPauseFingerprint() = Fingerprint(
-    definingClass = BASE_PLAYER_ACTIVITY,
-    name = "onPause",
-    returnType = "V",
-    parameters = emptyList(),
-    filters = listOf(methodCall(definingClass = PLAYER_SWITCHER, name = "onPause")),
-)
-
 @Suppress("unused")
 val f1TvPictureInPicturePatch = bytecodePatch(
     name = "F1 TV - Picture-in-Picture",
@@ -64,16 +52,9 @@ val f1TvPictureInPicturePatch = bytecodePatch(
 ) {
     compatibleWith(COMPATIBILITY_F1_TV)
     dependsOn(f1TvPictureInPictureResourcePatch)
+    dependsOn(f1TvBackgroundPlaybackPatch)
 
     execute {
-        val onPause = f1TvOnPauseFingerprint()
-        val pauseMatch = onPause.matchOrNull()
-            ?: error("F1 TV BasePlayerActivity.onPause() -> PlayerSwitcher.onPause() was not found")
-        check(pauseMatch.instructionMatches.size == 1) {
-            "Expected one PlayerSwitcher.onPause() call, found ${pauseMatch.instructionMatches.size}"
-        }
-        pauseMatch.method.removeInstruction(pauseMatch.instructionMatches.single().index)
-
         val playerClass = mutableClassDefBy(BASE_PLAYER_ACTIVITY)
         if (playerClass.methods.none { it.name == "onUserLeaveHint" && it.parameterTypes.isEmpty() }) {
             playerClass.methods.add(

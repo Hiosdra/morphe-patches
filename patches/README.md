@@ -1,7 +1,8 @@
 # Hiosdra Patches
 
 This repository contains Morphe patches for the F1 TV Android app
-(`com.formulaone.production`) and VesselFinder (`com.astrapaging.vff`).
+(`com.formulaone.production`), Movie Paradise (`com.techkitlabs.movieparadise`),
+and VesselFinder (`com.astrapaging.vff`).
 
 ## 📋 Available Patches
 
@@ -54,7 +55,28 @@ supports the same `packageName`, `updatePermissions`, and `updateProviders`
 options. The required Morphe and ReVanced attribution is retained in the
 source file.
 
-### 6. VesselFinder - Disable advertisements
+### 6. Movie Paradise - Force RevenueCat entitlement (experimental)
+**File:** `MovieParadisePremiumPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Forces RevenueCat entitlements active. This is experimental and premium access
+is server-authoritative, so the patch may unlock nothing. Disabled by default.
+
+### 7. Movie Paradise - GmsCore support (microG login)
+**File:** `MovieParadiseGmsCoreSupportPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Routes Google Play Services calls through microG (MicroG-RE) so Google sign-in
+can work without stock Play Services. Disabled by default.
+
+### 8. Movie Paradise - PairIP license bypass
+**File:** `MovieParadisePairipBypassPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Neutralises Google Play integrity and license checks (PairIP) so an authorized
+repackaged build can launch. Enabled by default.
+
+### 9. VesselFinder - Disable advertisements
 **File:** `VesselFinderDisableAdvertisementsPatch.kt`
 **Target:** `com.izosa.advert.AdvertPlugin` in VesselFinder 6.6.0
 
@@ -86,7 +108,8 @@ Store updates` and `Clone app`/`Change package name` patches. Select `F1 TV -
 Disable Play Store updates` or `F1 TV - Change package name` directly from
 this source; they do not require selecting the corresponding universal patch
 from the official Morphe bundle. Their source files retain the required
-Morphe/ReVanced attribution and GPLv3 notices.
+Morphe/ReVanced attribution and GPLv3 notices. Movie Paradise and VesselFinder
+patches are listed separately and can be selected independently.
 
 ## 🐞 Debugging on a device
 

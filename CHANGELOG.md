@@ -1,3 +1,9 @@
+## [1.4.0-dev.6](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.5...v1.4.0-dev.6) (2026-09-27)
+
+### ✨ New Features
+
+* **release:** advance dev prerelease for Morphe discovery ([b58a370](https://github.com/Hiosdra/morphe-patches/commit/b58a37016a80345b884b54eac3cb62e33e91d77b))
+
 ## [1.4.0-dev.5](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-09-27)
 
 ### 🐛 Bug Fixes

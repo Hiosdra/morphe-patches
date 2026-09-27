@@ -1,3 +1,9 @@
+## [1.5.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** deduplicate PiP lifecycle patch ([cf882c2](https://github.com/Hiosdra/morphe-patches/commit/cf882c2990eb4415826fe78822ac0394bc4ba625))
+
 ## [1.5.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2026-09-27)
 
 ### 🐛 Bug Fixes

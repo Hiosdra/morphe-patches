@@ -103,8 +103,8 @@ adb shell dumpsys package com.formulaone.production | grep -i -E 'picture|foregr
 ## 🎯 Target App Details
 
 - **Package:** `com.formulaone.production`
-- **Version:** 3.0.48.1-SP157.6.0-release-R52-mobile
-- **Version Code:** 30481000
+- **Version:** 3.0.49.4-SP166.4.1-release-R54.2-mobile
+- **Version Code:** 30494002
 - **Min SDK:** 29 (Android 10)
 - **Target SDK:** 35 (Android 15)
 
@@ -147,7 +147,7 @@ the decoded `AndroidManifest.xml` with the standard resource-patch API.
 
 | F1 TV Version | Patch Version | Status |
 |---------------|---------------|--------|
-| 3.0.48.1-SP157.6.0-release-R52-mobile (30481000) | current main | ✅ Applied and rebuilt |
+| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current main | ✅ All five patches applied and APK rebuilt unsigned; device playback not verified |
 | Other F1 TV versions | — | ⚠️ Fingerprints may need updates |
 
 Patches use fingerprints to target the exact player lifecycle calls. Update the

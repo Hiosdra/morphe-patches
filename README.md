@@ -12,8 +12,9 @@ Use these patches only with applications you own or are authorized to modify.
 
 The published bundle contains five F1 TV patches, all enabled by default.
 The standalone patches adapted from Morphe's universal patches are included
-directly in this F1 TV bundle. They have been applied and rebuilt successfully
-against the supported APK version listed below.
+directly in this F1 TV bundle. All five patches applied and the APK rebuilt
+successfully for the supported version listed below. The locally generated APK
+is unsigned; playback has not been verified on a device.
 
 ## Add to Morphe
 
@@ -36,7 +37,7 @@ https://github.com/Hiosdra/morphe-patches
 
 **🎯 Supported versions:**
 
-| 3.0.48.1-SP157.6.0-release-R52-mobile |
+| 3.0.49.4-SP166.4.1-release-R54.2-mobile |
 | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
@@ -62,7 +63,7 @@ Or manually add this repository URL as a patch source in Morphe: https://github.
 To build Hiosdra Patches, follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
 
 The current F1 TV target is `com.formulaone.production` version
-`3.0.48.1-SP157.6.0-release-R52-mobile` (versionCode `30481000`).
+`3.0.49.4-SP166.4.1-release-R54.2-mobile` (versionCode `30494002`).
 
 ## 📜 License
 

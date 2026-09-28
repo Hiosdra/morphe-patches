@@ -1,3 +1,9 @@
+## [1.6.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.6.0-dev.1...v1.6.0-dev.2) (2026-09-28)
+
+### ✨ New Features
+
+* **f1:** allow dismissing forced upgrade prompt ([ad3087d](https://github.com/Hiosdra/morphe-patches/commit/ad3087d9499d93c7e5b3b07d5c7e474d97f5e0ab))
+
 ## [1.6.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0...v1.6.0-dev.1) (2026-09-28)
 
 ### 🐛 Bug Fixes

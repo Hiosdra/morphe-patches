@@ -8,19 +8,22 @@ This repository contains Morphe patches for the F1 TV Android app (`com.formulao
 **File:** `F1TvPictureInPicturePatch.kt`  
 **Target:** `BasePlayerActivity` (Bitmovin player)
 
-Enables PiP for the standard Bitmovin player by removing the player pause call
-from `onPause()`, adding a guarded `onUserLeaveHint()` entry point, and adding
-the required `supportsPictureInPicture` and `resizeableActivity` manifest
-attributes. The manifest edit is included automatically as a dependency.
+Enables PiP for the standard Bitmovin player. On Android 12 and newer it sets
+the system auto-enter flag only while playback is active and not casting; on
+Android 10 and 11 it uses a guarded `onUserLeaveHint()` entry point. It also
+enables the PiP flag used by Tiledmedia multiview and adds the required
+`supportsPictureInPicture` and `resizeableActivity` manifest attributes. The
+manifest edit is included automatically as a dependency.
 
 ### 2. F1 TV - Background playback
 **File:** `F1TvBackgroundPlaybackPatch.kt`  
 **Target:** `BasePlayerActivity`
 
-Keeps playback attached when the activity stops by removing the player-view
-`onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case `detach()` calls.
-This allows audio to continue while the app remains alive. Pair it with the
-foreground-service patch below for stronger process lifetime protection.
+Keeps Bitmovin playback attached when the activity stops by removing the
+player-view `onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case
+`detach()` calls. For multiview, it enables ClearVR's background-audio session
+and its Media3 service. Pair it with the foreground-service patch below for
+stronger process lifetime protection on the Bitmovin path.
 
 ### 3. F1 TV - Foreground playback service
 **File:** `F1TvForegroundServicePatch.kt`
@@ -103,8 +106,8 @@ adb shell dumpsys package com.formulaone.production | grep -i -E 'picture|foregr
 ## 🎯 Target App Details
 
 - **Package:** `com.formulaone.production`
-- **Version:** 3.0.48.1-SP157.6.0-release-R52-mobile
-- **Version Code:** 30481000
+- **Version:** 3.0.49.4-SP166.4.1-release-R54.2-mobile
+- **Version Code:** 30494002
 - **Min SDK:** 29 (Android 10)
 - **Target SDK:** 35 (Android 15)
 
@@ -127,7 +130,9 @@ The F1 TV app uses two separate player implementations:
 1. **Bitmovin Player** (`BasePlayerActivity`) - Standard live/VOD playback with dual PlayerView for seamless channel switching
 2. **Tiledmedia/ClearVR** (`TiledPlayerActivity`) - Multiview (multiple onboard cameras)
 
-These patches target only the Bitmovin player path (`BasePlayerActivity`).
+The PiP and background-playback patches cover both Bitmovin
+(`BasePlayerActivity`) and Tiledmedia (`TiledPlayerFactoryMobile`). The
+foreground-service patch applies to the Bitmovin path.
 
 ### Key Classes Patched
 
@@ -147,7 +152,7 @@ the decoded `AndroidManifest.xml` with the standard resource-patch API.
 
 | F1 TV Version | Patch Version | Status |
 |---------------|---------------|--------|
-| 3.0.48.1-SP157.6.0-release-R52-mobile (30481000) | current main | ✅ Applied and rebuilt |
+| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current main | ✅ All five patches applied and APK rebuilt unsigned; device playback not verified |
 | Other F1 TV versions | — | ⚠️ Fingerprints may need updates |
 
 Patches use fingerprints to target the exact player lifecycle calls. Update the

@@ -1,8 +1,7 @@
 # Hiosdra Patches
 
 This repository contains Morphe patches for the F1 TV Android app
-(`com.formulaone.production`), Movie Paradise (`com.techkitlabs.movieparadise`),
-and VesselFinder (`com.astrapaging.vff`).
+(`com.formulaone.production`) and Movie Paradise (`com.techkitlabs.movieparadise`).
 
 ## 📋 Available Patches
 
@@ -79,14 +78,6 @@ can work without stock Play Services. Disabled by default.
 Neutralises Google Play integrity and license checks (PairIP) so an authorized
 repackaged build can launch. Enabled by default.
 
-### 9. VesselFinder - Disable advertisements
-**File:** `VesselFinderDisableAdvertisementsPatch.kt`
-**Target:** `com.izosa.advert.AdvertPlugin` in VesselFinder 6.6.0
-
-Prevents the native Capacitor advertisement plugin from creating or showing
-AdMob banner advertisements, including consent and Mobile Ads initialization.
-This patch is disabled by default.
-
 ## 🚀 Building
 
 ```bash
@@ -111,8 +102,8 @@ Store updates` and `Clone app`/`Change package name` patches. Select `F1 TV -
 Disable Play Store updates` or `F1 TV - Change package name` directly from
 this source; they do not require selecting the corresponding universal patch
 from the official Morphe bundle. Their source files retain the required
-Morphe/ReVanced attribution and GPLv3 notices. Movie Paradise and VesselFinder
-patches are listed separately and can be selected independently.
+Morphe/ReVanced attribution and GPLv3 notices. Movie Paradise patches are listed
+separately and can be selected independently.
 
 ## 🐞 Debugging on a device
 

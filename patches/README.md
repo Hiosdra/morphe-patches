@@ -11,9 +11,10 @@ and VesselFinder (`com.astrapaging.vff`).
 **Target:** `BasePlayerActivity` (Bitmovin player)
 
 Enables PiP for the standard Bitmovin player by removing the player pause call
-from `onPause()`, adding a guarded `onUserLeaveHint()` entry point, and adding
-the required `supportsPictureInPicture` and `resizeableActivity` manifest
-attributes. The manifest edit is included automatically as a dependency.
+from `onPause()`, setting Android 12+ auto-enter parameters while playback is
+active, and adding a guarded `onUserLeaveHint()` fallback for Android 10 and 11.
+It also enables the in-app PiP flag used by Tiledmedia's multiview player. The
+required manifest edit is included automatically as a dependency.
 
 ### 2. F1 TV - Background playback
 **File:** `F1TvBackgroundPlaybackPatch.kt`  
@@ -162,9 +163,9 @@ The F1 TV app uses two separate player implementations:
 2. **Tiledmedia/ClearVR** (`TiledPlayerActivity`) - Multiview (multiple onboard cameras)
 
 The PiP and foreground-service patches target the Bitmovin path
-(`BasePlayerActivity`). The background playback patch also updates
-`TiledPlayerFactoryMobile` so ClearVR's own media session can continue multiview
-audio in the background.
+(`BasePlayerActivity`). The PiP patch also enables Tiledmedia's built-in PiP
+manager in `TiledPlayerFactoryMobile`; the background playback patch enables
+ClearVR's own media session so multiview audio can continue in the background.
 
 ### Key Classes Patched
 
@@ -173,7 +174,7 @@ audio in the background.
 | BasePlayerActivity | com.avs.f1.ui.player | Main player Activity |
 | PlayerSwitcherImpl | com.avs.f1.interactors.playback | Manages dual PlayerView, DRM, channel switching |
 | PlaybackUseCase | com.avs.f1.interactors.playback | Activity/player attachment lifecycle |
-| TiledPlayerFactoryMobile | com.avs.f1.ui.tiledmediaplayer | Enables ClearVR background audio and its built-in media session |
+| TiledPlayerFactoryMobile | com.avs.f1.ui.tiledmediaplayer | Enables ClearVR PiP and background audio |
 
 ### Bytecode Patching Strategy
 
@@ -196,9 +197,9 @@ class descriptors and compatibility target when F1 TV updates.
 1. **Notification permission** - On Android 13 and newer, allow notifications for
    the F1 TV app so the foreground playback notification can be shown.
 
-2. **Multiview** - This patch enables background audio through ClearVR's media
-   session. PiP behavior remains controlled by F1 TV's existing Tiledmedia
-   support.
+2. **Multiview** - PiP uses Tiledmedia's built-in controller and Android's
+   PiP support. Validate the multiview PiP layout on-device after applying the
+   patch.
 
 3. **Version pinning** - Update the compatibility target and fingerprints when
    F1 TV changes its player lifecycle or class names.

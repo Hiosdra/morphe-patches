@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0...v1.6.0) (2026-09-28)
+
+### ✨ New Features
+
+* add F1 update dismissal and Movie Paradise GMS support ([4cf9ea5](https://github.com/Hiosdra/morphe-patches/commit/4cf9ea5d381dee980fd0649455889b3f590262a3))
+
 ## [1.5.0](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0...v1.5.0) (2026-09-28)
 
 ### 🐛 Bug Fixes

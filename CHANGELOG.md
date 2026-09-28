@@ -1,3 +1,9 @@
+## [1.6.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.6.0-dev.2...v1.6.0-dev.3) (2026-09-28)
+
+### 🐛 Bug Fixes
+
+* **vesselfinder:** remove unused VesselFinder patch ([dd72be9](https://github.com/Hiosdra/morphe-patches/commit/dd72be981ba30b9f8d19609e5c6e59d137d138ad))
+
 ## [1.6.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.6.0-dev.1...v1.6.0-dev.2) (2026-09-28)
 
 ### ✨ New Features

@@ -32,7 +32,7 @@ https://github.com/Hiosdra/morphe-patches
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.6.0-dev.2](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.6.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;10 patches total
+> **[v1.6.0-dev.3](https://github.com/Hiosdra/morphe-patches/releases/tag/v1.6.0-dev.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;9 patches total
 <details open>
 <summary>📦 F1 TV&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
 <br>
@@ -67,21 +67,6 @@ https://github.com/Hiosdra/morphe-patches
 | [Movie Paradise - Force RevenueCat entitlement (experimental)](#movie-paradise-force-revenuecat-entitlement-experimental) | Forces RevenueCat entitlements active. Experimental: premium is server-authoritative, so this likely unlocks nothing. |  |
 | [Movie Paradise - GmsCore support (microG login)](#movie-paradise-gmscore-support-microg-login) | Routes Google Play Services through microG (MicroG-RE) so Google sign-in works without stock Play Services. |  |
 | [Movie Paradise - PairIP license bypass](#movie-paradise-pairip-license-bypass) | Neutralises Google Play integrity/license checks (PairIP) so a repackaged build launches. |  |
-
-</details>
-
-<details open>
-<summary>📦 VesselFinder&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
-<br>
-
-**🎯 Supported versions:**
-
-| 6.6.0 |
-| :---: |
-
-| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
-|----------|----------------|-----------|
-| [VesselFinder - Disable advertisements](#vesselfinder-disable-advertisements) | Prevents the VesselFinder advertisement plugin from creating or showing banner ads. |  |
 
 </details>
 

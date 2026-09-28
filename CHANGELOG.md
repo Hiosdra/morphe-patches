@@ -1,3 +1,9 @@
+## [1.5.0-dev.4](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2026-09-28)
+
+### 🐛 Bug Fixes
+
+* **f1:** enable PiP auto-enter on Android 12+ ([fe47caf](https://github.com/Hiosdra/morphe-patches/commit/fe47caf2198a0ed13252eb0a0e480072a3e41fa6))
+
 ## [1.5.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2026-09-27)
 
 ### 🐛 Bug Fixes

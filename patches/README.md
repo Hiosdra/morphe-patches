@@ -57,26 +57,36 @@ supports the same `packageName`, `updatePermissions`, and `updateProviders`
 options. The required Morphe and ReVanced attribution is retained in the
 source file.
 
-### 6. Movie Paradise - Force RevenueCat entitlement (experimental)
+### 6. F1 TV - Dismiss forced update prompt
+**File:** `F1TvDismissForcedUpgradePatch.kt`
+**Target:** F1 TV `GenericActivity` forced-update dialog
+
+Allows closing the forced-update dialog without exiting F1 TV. The update
+button remains available. This patch targets F1 TV 3.0.49.4.
+
+### 7. Movie Paradise - Force RevenueCat entitlement (experimental)
 **File:** `MovieParadisePremiumPatch.kt`
 **Target:** Movie Paradise 5.2.0
 
 Forces RevenueCat entitlements active. This is experimental and premium access
 is server-authoritative, so the patch may unlock nothing. Disabled by default.
 
-### 7. Movie Paradise - GmsCore support (microG login)
+### 8. Movie Paradise - GmsCore support (microG login)
 **File:** `MovieParadiseGmsCoreSupportPatch.kt`
 **Target:** Movie Paradise 5.2.0
 
 Routes Google Play Services calls through microG (MicroG-RE) so Google sign-in
-can work without stock Play Services. Disabled by default.
+can work without stock Play Services. The patch is disabled by default and
+depends on the PairIP license bypass patch. Google sign-in has not been verified
+on a device.
 
-### 8. Movie Paradise - PairIP license bypass
+### 9. Movie Paradise - PairIP license bypass
 **File:** `MovieParadisePairipBypassPatch.kt`
 **Target:** Movie Paradise 5.2.0
 
 Neutralises Google Play integrity and license checks (PairIP) so an authorized
-repackaged build can launch. Enabled by default.
+repackaged build can launch. It is a prerequisite for GmsCore support and the
+experimental RevenueCat patch. Enabled by default.
 
 ## 🚀 Building
 
@@ -97,7 +107,7 @@ Outputs:
 
 2. Enable desired patches in Morphe's patch list
 
-The F1 TV bundle includes standalone F1 TV copies of Morphe's `Disable Play
+The patch bundle includes standalone F1 TV copies of Morphe's `Disable Play
 Store updates` and `Clone app`/`Change package name` patches. Select `F1 TV -
 Disable Play Store updates` or `F1 TV - Change package name` directly from
 this source; they do not require selecting the corresponding universal patch

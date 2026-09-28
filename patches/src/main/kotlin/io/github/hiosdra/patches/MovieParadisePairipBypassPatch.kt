@@ -14,8 +14,8 @@ import app.morphe.patcher.patch.bytecodePatch
  * static entry point to an immediate `return-void` stops it ever connecting to
  * the licensing service, so a patched build launches at all.
  *
- * This is a prerequisite for [movieParadisePremiumPatch]; on its own it does not
- * change premium state.
+ * This is a prerequisite for [movieParadiseGmsCoreSupportPatch] and
+ * [movieParadisePremiumPatch]. On its own it does not grant premium access.
  */
 @Suppress("unused")
 val movieParadisePairipBypassPatch = bytecodePatch(

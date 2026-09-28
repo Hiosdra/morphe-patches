@@ -1,30 +1,99 @@
-## [1.5.0](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0...v1.5.0) (2026-09-28)
-
-### 🐛 Bug Fixes
-
-* **f1:** support F1 TV 3.0.49.4 ([a060780](https://github.com/Hiosdra/morphe-patches/commit/a060780521df36c9df19dda1d6b7c6bbe840c7f3))
+## [1.6.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.6.0-dev.1...v1.6.0-dev.2) (2026-09-28)
 
 ### ✨ New Features
 
-* **f1:** enable PiP and multiview background audio ([88ca286](https://github.com/Hiosdra/morphe-patches/commit/88ca286bef7857a35128e29af89e82fc55b90593))
+* **f1:** allow dismissing forced upgrade prompt ([ad3087d](https://github.com/Hiosdra/morphe-patches/commit/ad3087d9499d93c7e5b3b07d5c7e474d97f5e0ab))
 
-## [1.4.0](https://github.com/Hiosdra/morphe-patches/compare/v1.3.1...v1.4.0) (2026-08-25)
+## [1.6.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0...v1.6.0-dev.1) (2026-09-28)
 
 ### 🐛 Bug Fixes
 
-* **f1:** enable all patches by default ([bbe871c](https://github.com/Hiosdra/morphe-patches/commit/bbe871c3d6293b450b83627bace82f3e8b4616fd))
-* **f1:** enable package name patch by default ([4c56cb0](https://github.com/Hiosdra/morphe-patches/commit/4c56cb017f4e0d9b6801efd77c0b55488bed52fd))
-* **f1:** preserve playback position when entering pip ([2b6e86a](https://github.com/Hiosdra/morphe-patches/commit/2b6e86aa481d5a0681c216ccc0f6ebdbe9cb30fb))
+* add VesselFinder advertisement suppression patch ([0c67061](https://github.com/Hiosdra/morphe-patches/commit/0c67061081f5c18bd5ff69d407f5e5885c0bff4e))
+* **f1:** deduplicate PiP lifecycle patch ([cf882c2](https://github.com/Hiosdra/morphe-patches/commit/cf882c2990eb4415826fe78822ac0394bc4ba625))
+* **f1:** enable PiP auto-enter on Android 12+ ([fe47caf](https://github.com/Hiosdra/morphe-patches/commit/fe47caf2198a0ed13252eb0a0e480072a3e41fa6))
+* **f1:** enable Tiledmedia background audio ([343a5b1](https://github.com/Hiosdra/morphe-patches/commit/343a5b14bcb7255be17d7c23262bee41d167c430))
+* **f1:** preserve playback position when entering pip ([7a56aad](https://github.com/Hiosdra/morphe-patches/commit/7a56aadc786c2432fa4b09de3536617872d5e6f6))
+* **f1:** target version 3.0.49.4 on dev ([88f3129](https://github.com/Hiosdra/morphe-patches/commit/88f3129f1e9d9a310ca6699ab8aa69281c86c44d))
 
 ### ✨ New Features
 
-* **f1:** add standalone package and update patches ([60ea94a](https://github.com/Hiosdra/morphe-patches/commit/60ea94a18243ba8f8cf7e1ae76d3c50ce375f69a))
+* add Movie Paradise GmsCore (microG) support for Google login ([7bf44b4](https://github.com/Hiosdra/morphe-patches/commit/7bf44b4dea6361e20eca6a00ac826acb95cfc0d9))
+* add Movie Paradise patches (PairIP bypass + experimental RevenueCat premium) ([d08a74c](https://github.com/Hiosdra/morphe-patches/commit/d08a74c8371b707b4b8b9c8374da74d0e2a9fb38))
+* **f1:** add standalone package and update patches ([8341c21](https://github.com/Hiosdra/morphe-patches/commit/8341c21ff66abd1e6cff12a3715b61c12d89426d))
+* **release:** advance dev prerelease for Morphe discovery ([b58a370](https://github.com/Hiosdra/morphe-patches/commit/b58a37016a80345b884b54eac3cb62e33e91d77b))
 
-## [1.3.1](https://github.com/Hiosdra/morphe-patches/compare/v1.3.0...v1.3.1) (2026-08-17)
+## [1.5.0-dev.4](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2026-09-28)
 
 ### 🐛 Bug Fixes
 
-* remove compile-only example patch ([0a7d7b3](https://github.com/Hiosdra/morphe-patches/commit/0a7d7b3c6f828cf4fe2f533df0cc2754028228df))
+* **f1:** enable PiP auto-enter on Android 12+ ([fe47caf](https://github.com/Hiosdra/morphe-patches/commit/fe47caf2198a0ed13252eb0a0e480072a3e41fa6))
+
+## [1.5.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** deduplicate PiP lifecycle patch ([cf882c2](https://github.com/Hiosdra/morphe-patches/commit/cf882c2990eb4415826fe78822ac0394bc4ba625))
+
+## [1.5.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** enable Tiledmedia background audio ([343a5b1](https://github.com/Hiosdra/morphe-patches/commit/343a5b14bcb7255be17d7c23262bee41d167c430))
+
+## [1.5.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0...v1.5.0-dev.1) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* add VesselFinder advertisement suppression patch ([0c67061](https://github.com/Hiosdra/morphe-patches/commit/0c67061081f5c18bd5ff69d407f5e5885c0bff4e))
+* **f1:** preserve playback position when entering pip ([7a56aad](https://github.com/Hiosdra/morphe-patches/commit/7a56aadc786c2432fa4b09de3536617872d5e6f6))
+* **f1:** target version 3.0.49.4 on dev ([88f3129](https://github.com/Hiosdra/morphe-patches/commit/88f3129f1e9d9a310ca6699ab8aa69281c86c44d))
+
+### ✨ New Features
+
+* add Movie Paradise GmsCore (microG) support for Google login ([7bf44b4](https://github.com/Hiosdra/morphe-patches/commit/7bf44b4dea6361e20eca6a00ac826acb95cfc0d9))
+* add Movie Paradise patches (PairIP bypass + experimental RevenueCat premium) ([d08a74c](https://github.com/Hiosdra/morphe-patches/commit/d08a74c8371b707b4b8b9c8374da74d0e2a9fb38))
+* **f1:** add standalone package and update patches ([8341c21](https://github.com/Hiosdra/morphe-patches/commit/8341c21ff66abd1e6cff12a3715b61c12d89426d))
+* **release:** advance dev prerelease for Morphe discovery ([b58a370](https://github.com/Hiosdra/morphe-patches/commit/b58a37016a80345b884b54eac3cb62e33e91d77b))
+
+## [1.4.0-dev.6](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.5...v1.4.0-dev.6) (2026-09-27)
+
+### ✨ New Features
+
+* **release:** advance dev prerelease for Morphe discovery ([b58a370](https://github.com/Hiosdra/morphe-patches/commit/b58a37016a80345b884b54eac3cb62e33e91d77b))
+
+## [1.4.0-dev.5](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.4...v1.4.0-dev.5) (2026-09-27)
+
+### 🐛 Bug Fixes
+
+* **f1:** target version 3.0.49.4 on dev ([88f3129](https://github.com/Hiosdra/morphe-patches/commit/88f3129f1e9d9a310ca6699ab8aa69281c86c44d))
+
+## [1.4.0-dev.4](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.3...v1.4.0-dev.4) (2026-08-25)
+
+### 🐛 Bug Fixes
+
+* **f1:** preserve playback position when entering pip ([7a56aad](https://github.com/Hiosdra/morphe-patches/commit/7a56aadc786c2432fa4b09de3536617872d5e6f6))
+
+### ✨ New Features
+
+* **f1:** add standalone package and update patches ([8341c21](https://github.com/Hiosdra/morphe-patches/commit/8341c21ff66abd1e6cff12a3715b61c12d89426d))
+
+## [1.4.0-dev.3](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.2...v1.4.0-dev.3) (2026-08-17)
+
+### 🐛 Bug Fixes
+
+* add VesselFinder advertisement suppression patch ([0c67061](https://github.com/Hiosdra/morphe-patches/commit/0c67061081f5c18bd5ff69d407f5e5885c0bff4e))
+
+## [1.4.0-dev.2](https://github.com/Hiosdra/morphe-patches/compare/v1.4.0-dev.1...v1.4.0-dev.2) (2026-07-29)
+
+### ✨ New Features
+
+* add Movie Paradise GmsCore (microG) support for Google login ([7bf44b4](https://github.com/Hiosdra/morphe-patches/commit/7bf44b4dea6361e20eca6a00ac826acb95cfc0d9))
+
+## [1.4.0-dev.1](https://github.com/Hiosdra/morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-07-29)
+
+### ✨ New Features
+
+* add Movie Paradise patches (PairIP bypass + experimental RevenueCat premium) ([d08a74c](https://github.com/Hiosdra/morphe-patches/commit/d08a74c8371b707b4b8b9c8374da74d0e2a9fb38))
 
 ## [1.3.0](https://github.com/Hiosdra/morphe-patches/compare/v1.2.2...v1.3.0) (2026-07-27)
 
@@ -67,3 +136,14 @@
 ### 🐛 Bug Fixes
 
 * publish a valid Morphe bundle from main ([c8640da](https://github.com/Hiosdra/morphe-patches/commit/c8640da7b8b734b25e8262473c7b7389ed0feddc))
+## [1.4.0](https://github.com/Hiosdra/morphe-patches/compare/v1.3.1...v1.4.0) (2026-08-25)
+
+### 🐛 Bug Fixes
+
+* **f1:** enable all patches by default ([bbe871c](https://github.com/Hiosdra/morphe-patches/commit/bbe871c3d6293b450b83627bace82f3e8b4616fd))
+* **f1:** enable package name patch by default ([4c56cb0](https://github.com/Hiosdra/morphe-patches/commit/4c56cb017f4e0d9b6801efd77c0b55488bed52fd))
+* **f1:** preserve playback position when entering pip ([2b6e86a](https://github.com/Hiosdra/morphe-patches/commit/2b6e86aa481d5a0681c216ccc0f6ebdbe9cb30fb))
+
+### ✨ New Features
+
+* **f1:** add standalone package and update patches ([60ea94a](https://github.com/Hiosdra/morphe-patches/commit/60ea94a18243ba8f8cf7e1ae76d3c50ce375f69a))

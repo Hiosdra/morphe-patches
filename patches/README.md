@@ -1,6 +1,7 @@
-# F1 TV Morphe Patches
+# Hiosdra Patches
 
-This repository contains Morphe patches for the F1 TV Android app (`com.formulaone.production`).
+This repository contains Morphe patches for the F1 TV Android app
+(`com.formulaone.production`) and Movie Paradise (`com.techkitlabs.movieparadise`).
 
 ## 📋 Available Patches
 
@@ -8,22 +9,22 @@ This repository contains Morphe patches for the F1 TV Android app (`com.formulao
 **File:** `F1TvPictureInPicturePatch.kt`  
 **Target:** `BasePlayerActivity` (Bitmovin player)
 
-Enables PiP for the standard Bitmovin player. On Android 12 and newer it sets
-the system auto-enter flag only while playback is active and not casting; on
-Android 10 and 11 it uses a guarded `onUserLeaveHint()` entry point. It also
-enables the PiP flag used by Tiledmedia multiview and adds the required
-`supportsPictureInPicture` and `resizeableActivity` manifest attributes. The
-manifest edit is included automatically as a dependency.
+Enables PiP for the standard Bitmovin player by removing the player pause call
+from `onPause()`, setting Android 12+ auto-enter parameters while playback is
+active, and adding a guarded `onUserLeaveHint()` fallback for Android 10 and 11.
+It also enables the in-app PiP flag used by Tiledmedia's multiview player. The
+required manifest edit is included automatically as a dependency.
 
 ### 2. F1 TV - Background playback
 **File:** `F1TvBackgroundPlaybackPatch.kt`  
-**Target:** `BasePlayerActivity`
+**Target:** `BasePlayerActivity` (Bitmovin) and `TiledPlayerFactoryMobile` (Tiledmedia)
 
 Keeps Bitmovin playback attached when the activity stops by removing the
 player-view `onPause()`, `PlayerSwitcher.onStop()`, and playback-use-case
-`detach()` calls. For multiview, it enables ClearVR's background-audio session
-and its Media3 service. Pair it with the foreground-service patch below for
-stronger process lifetime protection on the Bitmovin path.
+`detach()` calls. For multiview, it enables ClearVR's built-in background-audio
+session, which starts the SDK's `MediaPlaybackService` and `MediaSession` even
+when F1 TV's PiP setting is off. Pair it with the foreground-service patch
+below for stronger process lifetime protection on the Bitmovin path.
 
 ### 3. F1 TV - Foreground playback service
 **File:** `F1TvForegroundServicePatch.kt`
@@ -56,6 +57,27 @@ supports the same `packageName`, `updatePermissions`, and `updateProviders`
 options. The required Morphe and ReVanced attribution is retained in the
 source file.
 
+### 6. Movie Paradise - Force RevenueCat entitlement (experimental)
+**File:** `MovieParadisePremiumPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Forces RevenueCat entitlements active. This is experimental and premium access
+is server-authoritative, so the patch may unlock nothing. Disabled by default.
+
+### 7. Movie Paradise - GmsCore support (microG login)
+**File:** `MovieParadiseGmsCoreSupportPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Routes Google Play Services calls through microG (MicroG-RE) so Google sign-in
+can work without stock Play Services. Disabled by default.
+
+### 8. Movie Paradise - PairIP license bypass
+**File:** `MovieParadisePairipBypassPatch.kt`
+**Target:** Movie Paradise 5.2.0
+
+Neutralises Google Play integrity and license checks (PairIP) so an authorized
+repackaged build can launch. Enabled by default.
+
 ## 🚀 Building
 
 ```bash
@@ -80,7 +102,8 @@ Store updates` and `Clone app`/`Change package name` patches. Select `F1 TV -
 Disable Play Store updates` or `F1 TV - Change package name` directly from
 this source; they do not require selecting the corresponding universal patch
 from the official Morphe bundle. Their source files retain the required
-Morphe/ReVanced attribution and GPLv3 notices.
+Morphe/ReVanced attribution and GPLv3 notices. Movie Paradise patches are listed
+separately and can be selected independently.
 
 ## 🐞 Debugging on a device
 
@@ -130,9 +153,10 @@ The F1 TV app uses two separate player implementations:
 1. **Bitmovin Player** (`BasePlayerActivity`) - Standard live/VOD playback with dual PlayerView for seamless channel switching
 2. **Tiledmedia/ClearVR** (`TiledPlayerActivity`) - Multiview (multiple onboard cameras)
 
-The PiP and background-playback patches cover both Bitmovin
-(`BasePlayerActivity`) and Tiledmedia (`TiledPlayerFactoryMobile`). The
-foreground-service patch applies to the Bitmovin path.
+The PiP and foreground-service patches target the Bitmovin path
+(`BasePlayerActivity`). The PiP patch also enables Tiledmedia's built-in PiP
+manager in `TiledPlayerFactoryMobile`; the background playback patch enables
+ClearVR's own media session so multiview audio can continue in the background.
 
 ### Key Classes Patched
 
@@ -141,6 +165,7 @@ foreground-service patch applies to the Bitmovin path.
 | BasePlayerActivity | com.avs.f1.ui.player | Main player Activity |
 | PlayerSwitcherImpl | com.avs.f1.interactors.playback | Manages dual PlayerView, DRM, channel switching |
 | PlaybackUseCase | com.avs.f1.interactors.playback | Activity/player attachment lifecycle |
+| TiledPlayerFactoryMobile | com.avs.f1.ui.tiledmediaplayer | Enables ClearVR PiP and background audio |
 
 ### Bytecode Patching Strategy
 
@@ -152,7 +177,7 @@ the decoded `AndroidManifest.xml` with the standard resource-patch API.
 
 | F1 TV Version | Patch Version | Status |
 |---------------|---------------|--------|
-| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current main | ✅ All five patches applied and APK rebuilt unsigned; device playback not verified |
+| 3.0.49.4-SP166.4.1-release-R54.2-mobile (30494002) | current dev | ✅ Morphe applied the background patch to the APK DEX; device playback not verified |
 | Other F1 TV versions | — | ⚠️ Fingerprints may need updates |
 
 Patches use fingerprints to target the exact player lifecycle calls. Update the
@@ -163,7 +188,9 @@ class descriptors and compatibility target when F1 TV updates.
 1. **Notification permission** - On Android 13 and newer, allow notifications for
    the F1 TV app so the foreground playback notification can be shown.
 
-2. **Multiview** - TiledPlayerActivity is not targeted.
+2. **Multiview** - PiP uses Tiledmedia's built-in controller and Android's
+   PiP support. Validate the multiview PiP layout on-device after applying the
+   patch.
 
 3. **Version pinning** - Update the compatibility target and fingerprints when
    F1 TV changes its player lifecycle or class names.
